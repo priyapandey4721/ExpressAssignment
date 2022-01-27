@@ -1,0 +1,32 @@
+<%-include ("header")-%>
+<div class="container mt-5">
+  <button class="btn btn-dark"><a href="http://localhost:5000/form" ><b>Add Details</b></a></button><br/><br/>
+<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <% data.forEach(function(elem,index){ %>
+        <tr>
+        <td><%=elem.name%></td>
+        <td><%=elem.age%></td>
+        <td>
+          <button><a href="/update/<%= index %>" class="btn btn-success" role="button">Update</a></button>
+          <button><a href="/delete/<%= index %>" class="btn btn-danger" role="button">Delete</a></button>
+        </td>
+       </tr>
+          
+      <% }) %>
+ 
+     
+      
+     
+    </tbody>
+  </table>
+</div>
+<%-include ("footer")-%>
